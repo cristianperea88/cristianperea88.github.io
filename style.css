@@ -117,6 +117,25 @@ html::-webkit-scrollbar {
 
 }
 
+.blinking {
+  animation: opacity 1s ease-in-out infinite;
+  opacity: 1;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 /* Styles for the new link buttons */
 .top-right-link-button {
     position: fixed; /* Position relative to the viewport */
