@@ -24,3 +24,6 @@
 ## Creditos
 - [CaffeineOnIce](https://github.com/CaffeineOnIce/startpage)
 - [NajmosSalahin](https://github.com/NajmosSalahin/startpage)
+
+## Licencia
+[licencia](LICENCIA)
