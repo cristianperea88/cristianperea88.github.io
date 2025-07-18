@@ -1,13 +1,13 @@
 :root {
-    --color-bg: #282828; /* Gruvbox dark hard background */
+    --color-bg: #111111; /* Gruvbox dark hard background */
     --color-fg: #ebdbb2; /* Gruvbox foreground */
     --color-link: #83a598; /* Gruvbox aqua */
     --color-green: #00ff00;
 }
 
 html, body {
-  background: #111111;
-  color: #111111;
+  background: var(--color-bg);
+  color: var(--color-bg);
   font-family: "Jetbrains Mono", monospace; /* Added monospace for better code-like feel */
   height: 100%;
   width: 100%;
