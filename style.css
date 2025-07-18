@@ -2,6 +2,7 @@
     --color-bg: #282828; /* Gruvbox dark hard background */
     --color-fg: #ebdbb2; /* Gruvbox foreground */
     --color-link: #83a598; /* Gruvbox aqua */
+    --color-green: #00ff00;
 }
 
 html, body {
@@ -34,7 +35,7 @@ html::-webkit-scrollbar {
   align-items: center;
   min-height: 100%;
   width: 100%;
-  color: #00ff00;
+  color: var(--color-green);
   position: relative;
   z-index: 1; 
 }
