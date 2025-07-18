@@ -6,7 +6,7 @@
 }
 
 html, body {
-  background: #000;
+  background: #111111;
   color: var(--color-fg);
   font-family: "Jetbrains Mono", monospace; /* Added monospace for better code-like feel */
   height: 100%;
