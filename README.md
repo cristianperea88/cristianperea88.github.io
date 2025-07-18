@@ -26,4 +26,4 @@
 - [NajmosSalahin](https://github.com/NajmosSalahin/startpage)
 
 ## Licencia
-[licencia](LICENCIA)
+[licencia](LICENCE)
