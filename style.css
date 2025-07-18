@@ -34,10 +34,9 @@ html::-webkit-scrollbar {
   align-items: center;
   min-height: 100%;
   width: 100%;
-  color: var(--color-link);
+  color: #00ff00;
   position: relative;
-  z-index: 1;
-  
+  z-index: 1; 
 }
 
 .left-container {
