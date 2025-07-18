@@ -16,8 +16,9 @@
 
 > [!TIP]
 > Por si me preguntan por el Activa Ubuntu, en la parte inferior derecha es una extención de Gnome, llamada: [Activate-Gnome](https://github.com/isjerryxiao/gnome-shell-extension-activate-gnome)
-> > *In case I'm asked about the Ubuntu Activa, at the bottom right is a Gnome extension, called: **Activate-Gnome***
+> > *In case I'm asked about the Activa Ubuntu, at the bottom right is a Gnome extension, called: **Activate-Gnome***
 
+***
 ## Créditos (Credits)
 - [CaffeineOnIce](https://github.com/CaffeineOnIce/startpage)
 - [NajmosSalahin](https://github.com/NajmosSalahin/startpage)
