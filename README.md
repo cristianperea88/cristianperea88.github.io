@@ -8,18 +8,6 @@
 ***
 ![gif](gif.gif)
 ***
-```
-  ____________________________________________________
-/                                                      \
-|  dots para configurar las pestañas nuevas.            |
-\                                                      /
-  ____________________________________________________
-    \   ^__^
-     \  (oo)\_______
-        (__)\       )\/\
-            ||----w |
-            ||     ||
-```
 
 ## Creditos
 - [CaffeineOnIce](https://github.com/CaffeineOnIce/startpage)
