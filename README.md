@@ -15,7 +15,7 @@
 ## Creditos
 - [CaffeineOnIce](https://github.com/CaffeineOnIce/startpage)
 - [NajmosSalahin](https://github.com/NajmosSalahin/startpage)
-- Las imágenes, e Íconos usados no son de mi propiedad, creditos a sus respectivos autores.
+- La imagen [Harvard](Harvard_University_shield.png), y el gif [Arch](arch.gif) usados no son de mi propiedad, creditos a sus respectivos autores.
 
 ## Licencia
 [MIT](LICENSE)
