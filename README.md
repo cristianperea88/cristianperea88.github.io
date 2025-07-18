@@ -1,4 +1,4 @@
-# PÁGINA DE INICIO (HOME PAGE)
+# PÁGINA DE INICIO (STARTPAGE)
 
 ```
 /*       _\|/_
