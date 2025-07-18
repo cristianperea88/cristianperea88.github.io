@@ -1,0 +1,189 @@
+:root {
+    --color-bg: #282828; /* Gruvbox dark hard background */
+    --color-fg: #ebdbb2; /* Gruvbox foreground */
+    --color-link: #83a598; /* Gruvbox aqua */
+}
+
+html, body {
+  background: var(--color-bg);
+  color: var(--color-fg);
+  font-family: "Jetbrains Mono", monospace; /* Added monospace for better code-like feel */
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  overflow-y: auto; /* Allow vertical scrolling */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+.container {
+  display: grid;
+  /* Increased min and max width for the left column to make the GIF larger */
+  grid-template-columns: 1fr minmax(450px, 600px) minmax(700px, 1fr) 1fr;
+  grid-template-areas:
+    ". left right .";
+  column-gap: 250px;
+  justify-items: center;
+  align-items: center;
+  min-height: 100%;
+  width: 100%;
+  color: var(--color-link);
+  position: relative;
+  z-index: 1;
+  
+}
+
+.left-container {
+  grid-area: left;
+  aspect-ratio: 1/1;
+  max-width: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.1); /* fondo oscuro semitransparente */
+  padding: 20px 15px;
+  border-radius: 10px;
+  backdrop-filter: blur(8px); /* efecto blur */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* sombra opcional */
+}
+
+.right-container {
+  grid-area: right;
+  height: 50%; /* This height might need adjustment if content goes off-screen */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center all children horizontally */
+  justify-content: center;
+  padding-right: 0px; /* Removed as items are centered */
+  
+}
+
+.botom-container {
+  grid-area: botom;
+  height: 50%; /* This height might need adjustment if content goes off-screen */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center all children horizontally */
+  justify-content: center;
+  padding-right: 0px; /* Removed as items are centered */
+  
+}
+
+.datetime-container {
+    font-size: 2em; /* Increased from 1.4em */
+    color: var(--color-fg);
+    margin-bottom: 20px; /* Space between clock and cd ~/_ */
+    text-align: center; /* Center text within its own container */
+    width: 100%; /* Take full width to allow centering */
+}
+
+
+
+.gif img {
+  max-width: 100%;
+  max-height: 100%;
+  height: auto;
+  width: auto;
+  /* border: var(--color-link);
+  /* border-style: solid;
+  /* border-radius: 3em;
+  /* Reduced margin-top to move the GIF upwards */
+  margin-top: 50px; /* Adjust this value to align perfectly */
+}
+
+.head {
+  display: flex; /* Use flexbox to keep elements inline */
+  flex-direction: row; /* Arrange items in a row */
+  align-items: center; /* Vertically align items in the center */
+  font-size: 50px; /* Increased from 32px */
+  padding-top: 0px;
+  margin-top: 0px;
+  white-space: nowrap; /* Keep content on a single line */
+  background-color: rgba(0, 0, 0, 0.1); /* fondo oscuro semitransparente */
+  padding: 20px 80px;
+  border-radius: 100px;
+  backdrop-filter: blur(3px); /* efecto blur */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* sombra opcional */
+
+}
+
+/* Styles for the new link buttons */
+.top-right-link-button {
+    position: fixed; /* Position relative to the viewport */
+    top: 15px; /* Distance from the top */
+    width: 20px; /* Smaller size */
+    height: 20px; /* Smaller size */
+    border-radius: 50%; /* Makes it round */
+    border: none;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    z-index: 1000; /* Ensure it's on top of everything */
+    display: block; /* Make it a block element to apply width/height */
+    text-decoration: none; /* Remove underline for the link */
+    
+}
+
+.top-right-link-button:hover {
+    background-color: var(--color-link); /* Slightly darker on hover for the new color */
+}
+
+/* Specific positioning for each button */
+.button-3 {
+    right: 10px; /* Original button position */
+    background-color: var(--color-fg);
+
+}
+
+.button-2 {
+    right: 40px;
+    background-color: var(--color-fg);
+}
+
+.button-1 {
+    right: 70px; 
+    background-color: var(--color-fg);
+
+}
+
+.footer-text {
+  position: fixed;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: var(--color-link);
+  font-size: 20px;
+  z-index: 1;
+  text-align: center;
+  font-family: Jetbrains Mono;
+  opacity: 0.9;
+    background-color: rgba(0, 0, 0, 0.1); /* fondo oscuro semitransparente */
+  padding: 10px 40px;
+  border-radius: 1px;
+  backdrop-filter: blur(8px); /* efecto blur */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* sombra opcional */
+
+}
+
+.top-left-logo {
+  position: fixed;
+  top: 30px;
+  left: 40px;
+  z-index: 2;
+}
+
+.top-left-logo img {
+  height: 90px; /* Ajusta el tamaño del logo aquí */
+  width: auto;
+}
+
+
