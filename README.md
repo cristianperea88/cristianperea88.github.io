@@ -4,8 +4,8 @@
 /*       _\|/_
          (o o)
  +----oOO-{_}-OOo--------------------------+
- | Página de Inicio para FIREFOX o CHROME. |
- |   (Home page for FIREFOX or CHROME.)    |
+ | Página de Inicio para Firefox o Chrome. |
+ |   (Startpage for Firefox or Chrome.)    |
  +----------------------------------------*/
 
 ```
