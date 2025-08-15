@@ -324,6 +324,14 @@
     return urlRegex.test(string);
   }
 </script>
-
+  
+<script>
+  window.onload = function () {
+    setTimeout(() => {
+      document.getElementById('hidden-input').focus();
+    }, 100); // Espera 100ms para asegurar que todo cargó
+  };
+</script>
+  
 </body>
 </html>
