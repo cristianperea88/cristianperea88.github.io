@@ -285,7 +285,29 @@
 <!-- Texto en la parte inferior -->
 
 <div class="footer-text">Ing. Cristian Fabian Perea</div>
-<input id="hidden-input" type="text" autofocus autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity:0; position: absolute; left: -9999px;">
+<input 
+  id="hidden-input" 
+  type="text" 
+  autofocus 
+  autocomplete="off" 
+  autocorrect="off" 
+  autocapitalize="off" 
+  spellcheck="false"
+  style="
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    width: 200px;
+    background: transparent;
+    border: none;
+    color: white;
+    font-family: monospace;
+    font-size: 1rem;
+    outline: none;
+    caret-color: white;
+    z-index: 10;
+  "
+>
 <script>
   const searchTextElement = document.getElementById('search-text');
   const blinkerElement = document.getElementById('blinker');
