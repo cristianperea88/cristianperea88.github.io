@@ -76,7 +76,7 @@ body {
   width: 100%;
   height: auto;
   border-radius: 20px;
-  margin-top: 0px;
+  margin-top: 20px;
 }
 
 /* Zona derecha: texto o entrada */
@@ -118,8 +118,8 @@ input, textarea {
   flex-direction: row;
   align-items: center;
   font-size: 2.5em;
-  padding: 0px;
-  margin-top: 0px;
+  padding: 20px 40px;
+  margin-top: 20px;
   background-color: rgba(0, 0, 0, 0.1);
   border-radius: 100px;
   backdrop-filter: blur(3px);
