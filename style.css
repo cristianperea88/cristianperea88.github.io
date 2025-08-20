@@ -200,6 +200,7 @@ input, textarea {
 }
 
 .footer-text a:hover {
+  color: var(--color-green);
   text-decoration: underline; /* opcional, para efecto hover */
 }
 
