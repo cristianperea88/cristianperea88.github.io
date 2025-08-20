@@ -178,7 +178,7 @@ input, textarea {
 /* Footer centrado y flotante */
 .footer-text {
   position: fixed;
-  bottom: 10px;
+  bottom: 40px;
   left: 50%;
   transform: translateX(-50%);
   color: var(--color-link);
