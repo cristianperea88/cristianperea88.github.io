@@ -155,12 +155,12 @@ input, textarea {
 }
 
 .top-right-link-button:hover {
-  background-color: var(--color-link);
+  background-color: var(--color-green);
 }
 
-.button-1 { right: 70px; background-color: var(--color-fg); }
-.button-2 { right: 40px; background-color: var(--color-fg); }
-.button-3 { right: 10px; background-color: var(--color-fg); }
+.button-1 { right: 70px; background-color: var(--color-link); }
+.button-2 { right: 40px; background-color: var(--color-link); }
+.button-3 { right: 10px; background-color: var(--color-link); }
 
 /* Logo superior izquierdo */
 .top-left-logo {
