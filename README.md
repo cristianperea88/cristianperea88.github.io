@@ -17,7 +17,7 @@
 
 
 > [!IMPORTANT]
-> El gif (arch.gif) usado no es de mi propiedad, creditos a su respectivo autor.
+> El gif [gif](gif.gif) usado no es de mi propiedad, creditos a su respectivo autor.
 > > *The gif is not of my property, credit to your respective author.*
 
 ## Créditos (Credits)
