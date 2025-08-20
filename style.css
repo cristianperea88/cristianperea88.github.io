@@ -193,6 +193,16 @@ input, textarea {
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
+.footer-text a {
+  color: var(--color-link);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.footer-text a:hover {
+  text-decoration: underline; /* opcional, para efecto hover */
+}
+
 /* Para mejorar el padding en móviles */
 @media (max-width: 600px) {
   .head {
