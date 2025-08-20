@@ -67,7 +67,7 @@ body {
   align-items: center;
   background-color: rgba(0, 0, 0, 0.1);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 400px;
   backdrop-filter: blur(8px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
@@ -76,7 +76,7 @@ body {
   width: 100%;
   height: auto;
   border-radius: 20px;
-  margin-top: 20px;
+  margin-top: 0px;
 }
 
 /* Zona derecha: texto o entrada */
