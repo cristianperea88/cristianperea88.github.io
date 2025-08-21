@@ -143,7 +143,7 @@ input, textarea {
 
 /* Botones tipo semáforo en la esquina superior derecha */
 .top-right-link-button {
-  position: fixed;
+  position: absolute;
   top: 15px;
   cursor: pointer;
   color: var(--color-link);
@@ -151,12 +151,39 @@ input, textarea {
 }
 
 .top-right-link-button:hover {
-    color: var(--color-green);
-  text-decoration: underline; /* opcional, para efecto hover */
+  text-decoration: none; /* opcional, para efecto hover */
 }
 
-.button-1 { right: 230px;}
-.button-2 { right: 130px;}
+/* Botón individual */
+.ai-button {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 10px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: white;
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 14px;
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* Emoji dentro del botón */
+.ai-button .emoji {
+  font-size: 16px;
+}
+
+/* Hover efecto */
+.ai-button:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+
+.button-1 { right: 250px;}
+.button-2 { right: 140px;}
 .button-3 { right: 30px;}
 
 /* Logo superior izquierdo */
