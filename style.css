@@ -145,22 +145,19 @@ input, textarea {
 .top-right-link-button {
   position: fixed;
   top: 15px;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  border: none;
   cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  z-index: 1000;
+  color: var(--color-link);
+  text-decoration: none;
 }
 
 .top-right-link-button:hover {
-  background-color: var(--color-green);
+    color: var(--color-green);
+  text-decoration: underline; /* opcional, para efecto hover */
 }
 
-.button-1 { right: 70px; background-color: var(--color-link); }
-.button-2 { right: 40px; background-color: var(--color-link); }
-.button-3 { right: 10px; background-color: var(--color-link); }
+.button-1 { right: 230px;}
+.button-2 { right: 130px;}
+.button-3 { right: 30px;}
 
 /* Logo superior izquierdo */
 .top-left-logo {
