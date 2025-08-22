@@ -1,6 +1,8 @@
 # PÁGINA DE INICIO (STARTPAGE)
 
+## Pantallazo (Screenshot)
 - [Visualizar](https://cristianperea88.github.io)
+
 ```
 /*       _\|/_
          (o o)
@@ -12,7 +14,7 @@
 ```
 
 ***
-
+## Pantallazo (Screenshot)
  <img src="imagen.png" alt="Pantallazo - (Screenshot)" align="center" width="100%"/>
 
 ***
@@ -20,6 +22,8 @@
 > [!IMPORTANT]
 > El gif [arch](arch.gif) usado no es de mi propiedad, creditos a su respectivo autor.
 > > *The gif [arch](arch.gif) is not of my property, credit to your respective author.*
+
+***
 
 ## Créditos (Credits)
 - [CaffeineOnIce](https://github.com/CaffeineOnIce/startpage)
@@ -29,4 +33,4 @@
 ***
 
 ## Licencia (License)
-[MIT](LICENSE)
+- [MIT](LICENSE)
