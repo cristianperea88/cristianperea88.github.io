@@ -122,6 +122,25 @@ body {
   z-index: 10;
 }
 
+/* Botones en la esquina superior izquierda */
+.top-left-buttons {
+  position: fixed;
+  top: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+/* --- Botones AI en esquina inferior izquierda --- */
+.bottom-left-buttons {
+  position: fixed;
+  bottom: 10px;
+  left: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 10; 
+}
 
 /* Ocultar scrollbar */
 html::-webkit-scrollbar {
@@ -133,40 +152,6 @@ body {
   /* IE y Edge */
   scrollbar-width: none;
   /* Firefox */
-}
-
-/* Footer centrado y flotante */
-.footer-text {
-  position: fixed;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  color: var(--color-link);
-  font-size: 20px;
-  text-align: center;
-  opacity: 0.9;
-  font-family: "Jetbrains Mono", monospace;
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 10px 40px;
-  border-radius: 20px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-  z-index: 10;
-}
-
-.footer-text a {
-  color: var(--color-link);
-  text-decoration: none;
-  cursor: pointer;
-  display: flex;
-  gap: 10px;
-  z-index: 10;
-  
-}
-
-.footer-text a:hover {
-  color: #ffffff;
-  transform: scale(1.05);
 }
 
 .centered-gif {
