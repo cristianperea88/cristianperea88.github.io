@@ -12,9 +12,10 @@
 ```
 
 ***
- <img src="imagen.png" alt="Pantallazo - (Screenshot)" align="center" width="100%"/>
-***
 
+ <img src="imagen.png" alt="Pantallazo - (Screenshot)" align="center" width="100%"/>
+
+***
 
 > [!IMPORTANT]
 > El gif [arch](arch.gif) usado no es de mi propiedad, creditos a su respectivo autor.
