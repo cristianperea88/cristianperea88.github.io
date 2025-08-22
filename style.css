@@ -1,8 +1,12 @@
 :root {
-  --color-bg: #181717;       /* Fondo oscuro tipo Gruvbox */
-  --color-fg: #ebdbb2;       /* Texto principal */
-  --color-link: #83a598;     /* Color aqua para enlaces y decoraciones */
-  --color-green: #00ff00;    /* Verde para acentos */
+  --color-bg: #181717;
+  /* Fondo oscuro tipo Gruvbox */
+  --color-fg: #ebdbb2;
+  /* Texto principal */
+  --color-link: #83a598;
+  /* Color aqua para enlaces y decoraciones */
+  --color-green: #00ff00;
+  /* Verde para acentos */
 }
 
 /* Reset básico */
@@ -12,22 +16,14 @@
   padding: 0;
 }
 
-html, body {
+html,
+body {
   background: var(--color-bg);
   color: var(--color-fg);
   font-family: "Jetbrains Mono", monospace;
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-}
-
-/* Ocultar scrollbar */
-html::-webkit-scrollbar {
-  display: none;
-}
-body {
-  -ms-overflow-style: none; /* IE y Edge */
-  scrollbar-width: none;    /* Firefox */
 }
 
 /* Contenedor principal con grid adaptable */
@@ -39,122 +35,65 @@ body {
     "right";
   gap: 30px;
   justify-items: center;
-  align-items: center;
+  align-items: start;
   padding: 30px 15px;
   color: var(--color-green);
-  min-height: 100vh; /* Ocupa toda la altura de la pantalla */
+  min-height: 100vh;
 }
 
-/* En pantallas grandes, usar dos columnas y centrar verticalmente */
+/* Áreas del grid */
+.left-column {
+  grid-area: left;
+  width: 100%;
+  max-width: 600px;
+
+}
+
+.right-column {
+  grid-area: right;
+  width: 100%;
+  max-width: 600px;
+
+  display: flex;
+  justify-content: center;
+  /* centra verticalmente */
+  align-items: center;
+  /* centra horizontalmente */
+  text-align: center;
+}
+
+
+/* Diseño de dos columnas en pantallas más grandes */
 @media (min-width: 768px) {
   .container {
     grid-template-columns: 1fr 1fr;
     grid-template-areas: "left right";
-    gap: 80px;
-    align-items: center;         /* Centra verticalmente */
-    min-height: 100vh;           /* Asegura altura completa */
+    align-items: stretch;
+    /* hace que ambas columnas usen la misma altura */
+
+  }
+
+  .left-column,
+  .right-column {
+    width: 100%;
+    justify-content: center;
+    /* centra verticalmente */
+    align-items: center;
+    /* centra horizontalmente */
+    text-align: center;
   }
 }
 
-/* Zona izquierda: imagen/GIF */
-.left-container {
-  grid-area: left;
-  width: 100%;
-  max-width: 500px;
-  aspect-ratio: 1/1;
+/* --- Botones AI en esquina inferior derecha --- */
+.bottom-right-buttons {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
   display: flex;
-  justify-content: center;
-  align-items: center;
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  border-radius: 400px;
-  backdrop-filter: blur(8px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  gap: 10px;
+  z-index: 10;
 }
 
-.gif img {
-  width: 100%;
-  height: auto;
-  border-radius: 20px;
-  margin-top: -40px;
-}
-
-/* Zona derecha: texto o entrada */
-.right-container {
-  grid-area: right;
-  width: 100%;
-  max-width: 700px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-/* Input / elementos de entrada */
-input, textarea {
-  width: 100%;
-  max-width: 500px;
-  padding: 12px 20px;
-  font-size: 1.1em;
-  border: 1px solid var(--color-link);
-  border-radius: 8px;
-  background-color: #222;
-  color: var(--color-fg);
-  margin-top: 20px;
-}
-
-/* Reloj / fecha */
-.datetime-container {
-  font-size: 2em;
-  color: var(--color-fg);
-  margin-bottom: 20px;
-  text-align: center;
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.1);
-  padding: 10px 40px;
-  backdrop-filter: blur(20px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Cabecera estilizada */
-.head {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  font-size: 2.5em;
-  padding: 20px 40px;
-  margin-top: 20px;
-  background-color: rgba(0, 0, 0, 0.1);
-  border-radius: 100px;
-  backdrop-filter: blur(3px);
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
-}
-
-/* Cursor que parpadea */
-.blinking {
-  animation: blink-animation 1s steps(2, start) infinite;
-}
-
-@keyframes blink-animation {
-  to {
-    visibility: hidden;
-  }
-}
-
-/* Botones tipo semáforo en la esquina superior derecha */
-.top-right-link-button {
-  position: absolute;
-  top: 15px;
-  cursor: pointer;
-  color: var(--color-link);
-  text-decoration: none;
-}
-
-.top-right-link-button:hover {
-  text-decoration: none; /* opcional, para efecto hover */
-}
-
-/* Botón individual */
 .ai-button {
   display: flex;
   align-items: center;
@@ -170,33 +109,36 @@ input, textarea {
   transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
-/* Emoji dentro del botón */
 .ai-button .emoji {
-  font-size: 16px;
+  font-size: 25px;
 }
 
-/* Hover efecto */
 .ai-button:hover {
   background-color: rgba(255, 255, 255, 0.2);
   transform: scale(1.05);
 }
 
-
-.button-1 { right: 250px;}
-.button-2 { right: 140px;}
-.button-3 { right: 30px;}
-
-/* Logo superior izquierdo */
-.top-left-logo {
+/* Botones en la esquina superior derecha */
+.top-right-buttons {
   position: fixed;
-  top: 30px;
-  left: 40px;
-  z-index: 2;
+  top: 10px;
+  right: 10px;
+  display: flex;
+  gap: 10px;
+  z-index: 10;
 }
 
-.top-left-logo img {
-  height: 90px;
-  width: auto;
+
+/* Ocultar scrollbar */
+html::-webkit-scrollbar {
+  display: none;
+}
+
+body {
+  -ms-overflow-style: none;
+  /* IE y Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 /* Footer centrado y flotante */
@@ -209,12 +151,14 @@ input, textarea {
   font-size: 20px;
   text-align: center;
   opacity: 0.9;
-  font-family: Jetbrains Mono;
+  font-family: "Jetbrains Mono", monospace;
   background-color: rgba(0, 0, 0, 0.1);
   padding: 10px 40px;
   border-radius: 4px;
   backdrop-filter: blur(8px);
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  /* para que esté encima de otros elementos */
 }
 
 .footer-text a {
@@ -225,28 +169,71 @@ input, textarea {
 
 .footer-text a:hover {
   color: var(--color-green);
-  text-decoration: underline; /* opcional, para efecto hover */
+  text-decoration: underline;
+  /* efecto hover opcional */
 }
 
-/* Para mejorar el padding en móviles */
-@media (max-width: 600px) {
-  .head {
-    font-size: 1.8em;
-    padding: 15px 25px;
-    flex-wrap: wrap;
-    text-align: center;
-  }
+.centered-gif {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin-top: 80px;
+}
 
-  input, textarea {
-    font-size: 1em;
-  }
+/* Línea del buscador estilo terminal */
+#cursor-line {
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 40px;
+  border-radius: 100px;
+  color: #00ff00;
+  margin-top: 20px;
+  box-sizing: border-box;
+  overflow: hidden;
+  opacity: 0.9;
+  font-family: Jetbrains Mono;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
 
-  .datetime-container {
-    font-size: 1.5em;
-  }
+/* Este contiene el texto + cursor */
+#search-text {
+  display: inline-flex;
+  align-items: center;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  word-break: break-word;
+  white-space: normal;
+}
 
-  .footer-text {
-    font-size: 16px;
-    padding: 8px 20px;
+/* Texto que se escribe */
+#typed-text {
+  display: inline;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Cursor parpadeante */
+#blinker {
+  width: 10px;
+  height: 1em;
+  background-color: #00ff00;
+  margin-left: 2px;
+  animation: blink 1s step-start infinite;
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
+}
+
+#hidden-input {
+  position: absolute;
+  top: -100px;
+  opacity: 0;
 }
