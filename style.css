@@ -212,7 +212,7 @@ body {
 #blinker {
   width: 10px;
   height: 1em;
-  background-color: rgb(212, 34, 34);;
+  background-color: rgb(212, 34, 34);
   margin-left: 2px;
   animation: blink 1s step-start infinite;
 }
