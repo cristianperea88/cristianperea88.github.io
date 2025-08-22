@@ -12,6 +12,7 @@
 
 	<canvas id="canvas" style="position: fixed; top: 0; left: 0; z-index: 0;"></canvas>
 
+
 	<div class="container">
 
 		<div class="left-column">
@@ -19,12 +20,17 @@
 		</div>
 		<div class="right-column">
 			<div id="container">
+
+
+
+
 				<div id="cursor-line">
 					<span>>&nbsp</span>
 					<span id="search-text">
 						<span id="typed-text"></span><span id="blinker"></span>
 					</span>
 				</div>
+
 			</div>
 
 			<input id="hidden-input" type="text" autocomplete="off" />
@@ -66,21 +72,24 @@
 					hiddenInput.focus();
 				};
 			</script>
+
+
+
 		</div>
 	</div>
 
 	<!-- botones arriba -->
 
 	<div class="top-right-buttons">
-		<a href="https://chatgpt.com" class="ai-button" target="_blank" title="ChatGPT">
+		<a href="https://chatgpt.com" class="ai-button orange" target="_blank" title="ChatGPT">
 			<span class="emoji">⚜️</span>
 			<span class="label">ChatGPT</span>
 		</a>
-		<a href="https://gemini.google.com/app" class="ai-button" target="_blank" title="Gemini">
+		<a href="https://gemini.google.com/app" class="ai-button blue" target="_blank" title="Gemini">
 			<span class="emoji">🎖️</span>
 			<span class="label">Gemini</span>
 		</a>
-		<a href="https://claude.ai/new" class="ai-button" target="_blank" title="Claude AI">
+		<a href="https://claude.ai/new" class="ai-button red" target="_blank" title="Claude AI">
 			<span class="emoji">🏆</span>
 			<span class="label">Claude</span>
 		</a>
@@ -89,19 +98,20 @@
 	<!-- botones abajo -->
 
 	<div class="bottom-right-buttons">
-		<a href="https://github.com/" class="ai-button" target="_blank" title="Github">
+		<a href="https://github.com/" class="ai-button yellow" target="_blank" title="Github">
 			<span class="emoji">👣</span>
 			<span class="label">Github</span>
 		</a>
-		<a href="https://www.notion.com/es" class="ai-button" target="_blank" title="Notion">
+		<a href="https://www.notion.com/es" class="ai-button purple" target="_blank" title="Notion">
 			<span class="emoji">🧠</span>
 			<span class="label">Notion</span>
 		</a>
-		<a href="https://drive.google.com/drive/home" class="ai-button" target="_blank" title="Drive">
+		<a href="https://drive.google.com/drive/home" class="ai-button green" target="_blank" title="Drive">
 			<span class="emoji">⏳</span>
 			<span class="label">Drive</span>
 		</a>
 	</div>
+
 
 	<!-- footer -->
 
@@ -227,7 +237,7 @@
 
 
 	<script>
-		const text = "Hola, mi Inge...";
+		const text = "Hola, mi Inge.";
 		const typedText = document.getElementById("typed-text");
 
 		let index = 0;
