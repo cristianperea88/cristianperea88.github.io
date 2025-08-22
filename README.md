@@ -19,8 +19,9 @@
 
 ## :warning: Importante:
 > [!WARNING] 
-> El gif [arch](arch.gif) usado no es de mi propiedad, creditos a su respectivo autor.
+> El gif [arch](arch.gif) usado no es de mi propiedad, creditos a su respectivo autor.[^1]
 > > *The gif [arch](arch.gif) is not of my property, credit to your respective author.*
+[^1]: [Referencia](https://cristianperea88.github.io)
 
 ## :medal_military: Créditos (Credits) 
 1. [CaffeineOnIce](https://github.com/CaffeineOnIce/startpage)
