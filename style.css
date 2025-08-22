@@ -100,8 +100,8 @@ body {
   align-items: center;
   gap: 6px;
   padding: 6px 10px;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  border-radius: 6px;
+  border: 0.1px solid #313634;
+  border-radius: 10px;
   color: var(--color-link);
   text-decoration: none;
   font-size: 14px;
@@ -193,7 +193,7 @@ body {
   max-width: 500px;
   padding: 10px 40px;
   border-radius: 100px;
-  color: #00ff00;
+  color: var(--color-green);
   margin-top: 20px;
   box-sizing: border-box;
   overflow: hidden;
@@ -225,7 +225,7 @@ body {
 #blinker {
   width: 10px;
   height: 1em;
-  background-color: #00ff00;
+  background-color: var(--color-green);
   margin-left: 2px;
   animation: blink 1s step-start infinite;
 }
