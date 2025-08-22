@@ -1,6 +1,6 @@
 # PÁGINA DE INICIO (STARTPAGE)
 
-## Pantallazo (Screenshot)
+## Página (Web)
 - [Visualizar](https://cristianperea88.github.io)
 
 ```
