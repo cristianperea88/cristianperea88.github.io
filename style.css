@@ -7,6 +7,10 @@
   /* Color aqua para enlaces y decoraciones */
   --color-green: #00ff00;
   /* Verde para acentos */
+    --color-red: #ff0000;
+  /* Rojo para acentos */
+      --color-blue: #1e00ff;
+  /* Azul para acentos */
 }
 
 /* Reset básico */
@@ -176,7 +180,7 @@ body {
   max-width: 1000px;
   padding: 10px 80px;
   border-radius: 100px;
-  color: var(--color-green);
+  color: var(--color-red);
   margin-top: 20px;
   box-sizing: border-box;
   overflow: hidden;
@@ -208,7 +212,7 @@ body {
 #blinker {
   width: 10px;
   height: 1em;
-  background-color: var(--color-green);
+  background-color: var(--color-blue);
   margin-left: 2px;
   animation: blink 1s step-start infinite;
 }
