@@ -1,6 +1,6 @@
 # :sparkles: Página de Inicio (Startpage) :sparkles:
 
-## :fleur_de_lis: Página (Web) 
+## :fleur_de_lis: Sitio Web (Website) 
 - [Visualizar](https://cristianperea88.github.io)
 
 ```
