@@ -18,11 +18,11 @@
 
 ***
 
-> :warning: [!IMPORTANT] 
+> [!IMPORTANT] :warning:
 > El gif [arch](arch.gif) usado no es de mi propiedad, creditos a su respectivo autor.
 > > *The gif [arch](arch.gif) is not of my property, credit to your respective author.*
 
-## Créditos (Credits) :recycle:
+## :medal_military: Créditos (Credits) 
 1. [CaffeineOnIce](https://github.com/CaffeineOnIce/startpage)
 2. [NajmosSalahin](https://github.com/NajmosSalahin/startpage)
 3. [kencx](https://github.com/kencx/startpage)
