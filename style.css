@@ -180,7 +180,7 @@ body {
   max-width: 1000px;
   padding: 10px 80px;
   border-radius: 100px;
-  color: var(--color-red);
+  color: rgb(212, 34, 34);
   margin-top: 20px;
   box-sizing: border-box;
   overflow: hidden;
@@ -212,7 +212,7 @@ body {
 #blinker {
   width: 10px;
   height: 1em;
-  background-color: var(--color-blue);
+  background-color: rgb(143, 143, 143);
   margin-left: 2px;
   animation: blink 1s step-start infinite;
 }
