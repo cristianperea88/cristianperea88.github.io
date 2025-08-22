@@ -12,7 +12,6 @@
 
 	<canvas id="canvas" style="position: fixed; top: 0; left: 0; z-index: 0;"></canvas>
 
-
 	<div class="container">
 
 		<div class="left-column">
@@ -21,12 +20,11 @@
 		<div class="right-column">
 			<div id="container">
 				<div id="cursor-line">
-					<span>>&nbsp;</span>
+					<span>>&nbsp</span>
 					<span id="search-text">
 						<span id="typed-text"></span><span id="blinker"></span>
 					</span>
 				</div>
-
 			</div>
 
 			<input id="hidden-input" type="text" autocomplete="off" />
@@ -68,9 +66,6 @@
 					hiddenInput.focus();
 				};
 			</script>
-
-
-
 		</div>
 	</div>
 
@@ -107,7 +102,6 @@
 			<span class="label">Drive</span>
 		</a>
 	</div>
-
 
 	<!-- footer -->
 
@@ -224,6 +218,31 @@
 		}
 		setup();
 	</script>
-</body>
 
+	<div id="cursor-line">
+		<div id="search-text">
+			<span id="typed-text"></span><span id="blinker"></span>
+		</div>
+	</div>
+
+
+	<script>
+		const text = "Hola, mi Inge.";
+		const typedText = document.getElementById("typed-text");
+
+		let index = 0;
+
+		function typeWriter() {
+			if (index < text.length) {
+				typedText.textContent += text.charAt(index);
+				index++;
+				setTimeout(typeWriter, 80); // velocidad de tipeo (en ms)
+			}
+		}
+		// Inicia cuando la página carga
+		window.addEventListener("load", () => {
+			typeWriter();
+		});
+	</script>
+</body>
 </html>
