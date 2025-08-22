@@ -12,7 +12,9 @@
 ```
 
 ***
-![gif](gif.gif)
+<div align="center">
+  <img src="imagen.png" alt="Pantallazo - (Screenshot)">
+</div>
 ***
 
 
