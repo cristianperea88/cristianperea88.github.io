@@ -1,362 +1,229 @@
 <!DOCTYPE html>
-<html lang="es-es">
-<head>
-  <meta charset="UTF-8">
-  <title>~/inicio</title>
-  <link rel="stylesheet" href="style.css">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <style>
-    canvas {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      z-index: 0;
-      pointer-events: none; /* Para que no bloquee clics */
-    }
+<html lang="es">
 
-  </style>
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Dos Columnas</title>
+	<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-  <!-- Fondo de partículas -->
-  <canvas id="canvas"></canvas>
 
-  <!-- Contenido principal -->
-  <div class="container">
-    <div class="left-container">
-      <div class="gif">
-        <img src="arch.gif" />
-        <!--<img src="logo_1.png" /> -->
-      </div>
-    </div>
-
-<div class="right-container">
-  <a href="https://chatgpt.com" class="top-right-link-button button-1 ai-button" target="_blank" title="ChatGPT">
-    <span class="emoji">🧠</span>
-    <span class="label">ChatGPT</span>
-  </a>
-  <a href="https://gemini.google.com/app" class="top-right-link-button button-2 ai-button" target="_blank" title="Gemini">
-    <span class="emoji">🌟</span>
-    <span class="label">Gemini</span>
-  </a>
-  <a href="https://claude.ai/new" class="top-right-link-button button-3 ai-button" target="_blank" title="Claude AI">
-    <span class="emoji">🤖</span>
-    <span class="label">Claude</span>
-  </a>
-
-      <div class="datetime-container">
-        <div id="current-datetime"></div>
-      </div>
-
-      <div class="head">
-        <span id="prompt-prefix">> cd ~/</span><span id="search-text"></span><span id="blinker" class="blinking">_</span>
-      </div>
-    </div>
-    
-  </div>
-
-  <!-- Script de partículas -->
-  <script>
-    const canvasBody = document.getElementById("canvas");
-    const drawArea = canvasBody.getContext("2d");
-    let w, h, particles;
-
-    const opts = {
-        particleColor: "rgb(143, 143, 143)",
-        lineColor: "rgb(143, 143, 143)",
-        particleAmount: 40,
-        defaultSpeed: 0.5,
-        variantSpeed: 0.5,
-        defaultRadius: 10,
-        variantRadius: 10,
-        linkRadius: 260,
-    };
+	<canvas id="canvas" style="position: fixed; top: 0; left: 0; z-index: 0;"></canvas>
 
 
-    function resizeReset() {
-      w = canvasBody.width = window.innerWidth;
-      h = canvasBody.height = window.innerHeight;
-    }
+	<div class="container">
 
-    window.addEventListener("resize", () => {
-      clearTimeout(window.resizeTimeout);
-      window.resizeTimeout = setTimeout(resizeReset, 200);
-    });
+		<div class="left-column">
+			<img src="arch.gif" alt="GIF animado" class="centered-gif" />
+		</div>
+		<div class="right-column">
+			<div id="container">
+				<div id="cursor-line">
+					<span>>&nbsp;</span>
+					<span id="search-text">
+						<span id="typed-text"></span><span id="blinker"></span>
+					</span>
+				</div>
 
-    function checkDistance(x1, y1, x2, y2) {
-      return Math.hypot(x2 - x1, y2 - y1);
-    }
+			</div>
 
-    function linkPoints(point1, hubs) {
-      const rgb = opts.lineColor.match(/\d+/g);
-      for (let i = 0; i < hubs.length; i++) {
-        const distance = checkDistance(point1.x, point1.y, hubs[i].x, hubs[i].y);
-        const opacity = 1 - distance / opts.linkRadius;
-        if (opacity > 0) {
-          drawArea.lineWidth = 1;
-          drawArea.strokeStyle = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${opacity})`;
-          drawArea.beginPath();
-          drawArea.moveTo(point1.x, point1.y);
-          drawArea.lineTo(hubs[i].x, hubs[i].y);
-          drawArea.stroke();
-        }
-      }
-    }
+			<input id="hidden-input" type="text" autocomplete="off" />
 
-    class Particle {
-      constructor() {
-        this.x = Math.random() * w;
-        this.y = Math.random() * h;
-        this.speed = opts.defaultSpeed + Math.random() * opts.variantSpeed;
-        this.directionAngle = Math.random() * Math.PI * 2;
-        this.color = opts.particleColor;
-        this.radius = opts.defaultRadius + Math.random() * opts.variantRadius;
-        this.vector = {
-          x: Math.cos(this.directionAngle) * this.speed,
-          y: Math.sin(this.directionAngle) * this.speed
-        };
-      }
+			<!-- Script -->
+			<script>
+				const searchTextElement = document.getElementById('search-text');
+				const hiddenInput = document.getElementById('hidden-input');
 
-      update() {
-        this.border();
-        this.x += this.vector.x;
-        this.y += this.vector.y;
-      }
+				hiddenInput.addEventListener('input', () => {
+					searchTextElement.textContent = hiddenInput.value;
+				});
 
-      border() {
-        if (this.x >= w || this.x <= 0) this.vector.x *= -1;
-        if (this.y >= h || this.y <= 0) this.vector.y *= -1;
-        this.x = Math.max(0, Math.min(w, this.x));
-        this.y = Math.max(0, Math.min(h, this.y));
-      }
+				hiddenInput.addEventListener('keydown', (event) => {
+					if (event.key === 'Enter') {
+						const trimmedQuery = hiddenInput.value.trim();
+						if (trimmedQuery !== '') {
+							if (isValidUrl(trimmedQuery)) {
+								let urlToOpen = trimmedQuery;
+								if (!urlToOpen.startsWith('http://') && !urlToOpen.startsWith('https://')) {
+									urlToOpen = `http://${urlToOpen}`;
+								}
+								window.location.href = urlToOpen;
+							} else {
+								window.location.href = `https://www.google.com/search?q=${encodeURIComponent(trimmedQuery)}`;
+							}
+						}
+						hiddenInput.value = '';
+						searchTextElement.textContent = '';
+					}
+				});
 
-      draw() {
-        drawArea.beginPath();
-        drawArea.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
-        drawArea.fillStyle = this.color;
-        drawArea.fill();
-      }
-    }
+				function isValidUrl(string) {
+					const urlRegex = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/;
+					return urlRegex.test(string);
+				}
 
-    function setup() {
-      particles = [];
-      resizeReset();
-      for (let i = 0; i < opts.particleAmount; i++) {
-        particles.push(new Particle());
-      }
-      loop();
-    }
-
-    function loop() {
-      drawArea.clearRect(0, 0, w, h);
-      for (const particle of particles) {
-        particle.update();
-        particle.draw();
-      }
-      for (const particle of particles) {
-        linkPoints(particle, particles);
-      }
-      requestAnimationFrame(loop);
-    }
-
-    setup();
-  </script>
-   <script>
-        // Function to update the clock and date
-        function updateDateTime() {
-            const now = new Date();
-
-            // Format time for 12-hour clock with AM/PM
-            let hours = now.getHours();
-            const minutes = String(now.getMinutes()).padStart(2, '0');
-            const seconds = String(now.getSeconds()).padStart(2, '0');
-            const ampm = hours >= 12 ? 'PM' : 'AM';
-            hours = hours % 12;
-            hours = hours ? hours : 12; // The hour '0' should be '12'
-            const timeString = `${String(hours).padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
-
-            // Format date
-            const options = { year: 'numeric', month: 'long', day: 'numeric' };
-            const dateString = now.toLocaleDateString('es-ES', options);
+				window.onload = function () {
+					hiddenInput.focus();
+				};
+			</script>
 
 
-            document.getElementById('current-datetime').textContent = `${dateString} ${timeString}`;
-        }
 
-        // Update the clock every second
-        setInterval(updateDateTime, 1000);
+		</div>
+	</div>
 
-        // Initial call to display the time immediately
-        updateDateTime();
+	<!-- botones arriba -->
 
-        // Search bar functionality
-        const searchTextElement = document.getElementById('search-text');
-        const blinkerElement = document.getElementById('blinker');
-        let searchQuery = '';
+	<div class="top-right-buttons">
+		<a href="https://chatgpt.com" class="ai-button" target="_blank" title="ChatGPT">
+			<span class="emoji">⚜️</span>
+			<span class="label">ChatGPT</span>
+		</a>
+		<a href="https://gemini.google.com/app" class="ai-button" target="_blank" title="Gemini">
+			<span class="emoji">🎖️</span>
+			<span class="label">Gemini</span>
+		</a>
+		<a href="https://claude.ai/new" class="ai-button" target="_blank" title="Claude AI">
+			<span class="emoji">🏆</span>
+			<span class="label">Claude</span>
+		</a>
+	</div>
 
-        // Function to validate if a string is a URL
-        function isValidUrl(string) {
-            const urlRegex = /^(https?:\/\/(?:www\.|(?!www))[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|www\.[a-zA-Z0-9][a-zA-Z0-9-]+[a-zA-Z0-9]\.[^\s]{2,}|https?:\/\/[a-zA-Z0-9]+\.[^\s]{2,}|[a-zA-Z0-9]+\.[^\s]{2,})$/i;
-            return urlRegex.test(string);
-        }
+	<!-- botones abajo -->
 
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Backspace' || event.key === 'Enter' || event.key.length === 1) {
-                event.preventDefault();
-            }
+	<div class="bottom-right-buttons">
+		<a href="https://github.com/" class="ai-button" target="_blank" title="Github">
+			<span class="emoji">👣</span>
+			<span class="label">Github</span>
+		</a>
+		<a href="https://www.notion.com/es" class="ai-button" target="_blank" title="Notion">
+			<span class="emoji">🧠</span>
+			<span class="label">Notion</span>
+		</a>
+		<a href="https://drive.google.com/drive/home" class="ai-button" target="_blank" title="Drive">
+			<span class="emoji">⏳</span>
+			<span class="label">Drive</span>
+		</a>
+	</div>
 
-            if (event.key === 'Backspace') {
-                searchQuery = searchQuery.slice(0, -1);
-            } else if (event.key === 'Enter') {
-                const trimmedQuery = searchQuery.trim();
-                if (trimmedQuery !== '') {
-                    if (isValidUrl(trimmedQuery)) {
-                        let urlToOpen = trimmedQuery;
-                        if (!urlToOpen.startsWith('http://') && !urlToOpen.startsWith('https://')) {
-                            urlToOpen = `http://${urlToOpen}`;
-                        }
-                        window.location.href = urlToOpen;
-                    } else {
-                        window.location.href = `https://www.google.com/search?q=${encodeURIComponent(trimmedQuery)}`;
-                    }
-                }
-                searchQuery = '';
-            } else if (event.key.length === 1) {
-                searchQuery += event.key;
-            }
 
-            searchTextElement.textContent = searchQuery;
-        });
+	<!-- footer -->
 
-        // Pagination for links functionality
-        document.addEventListener('DOMContentLoaded', () => {
-            const categories = document.querySelectorAll('.category');
-            const linksPerPage = 5; // Number of links to show per page
+	<div class="footer-text">
+		<a href="https://cristianfabianperea.notion.site/20-29-Cristian-Fabi-n-Perea-085f39851d424edfaea862cfb220e2a9?source=copy_link"
+			target="_blank" rel="noopener noreferrer">
+			Ing. Cristian Fabian Perea
+		</a>
+	</div>
 
-            categories.forEach(category => {
-                const linksContainer = category.querySelector('.links');
-                const titleElement = linksContainer.querySelector('.title');
-                // Get all actual link elements, excluding the title
-                const allLinkElements = Array.from(linksContainer.querySelectorAll('li:not(.title)'));
 
-                // Store all original links and current page index on the category element
-                category.allOriginalLinks = allLinkElements;
-                category.currentPage = 0;
+	<!-- Script de partículas -->
+	<script>
+		const canvasBody = document.getElementById("canvas");
+		const drawArea = canvasBody.getContext("2d");
+		let w, h, particles;
 
-                const toggleButton = category.querySelector('.toggle-links-button');
+		const opts = {
+			particleColor: "rgb(143, 143, 143)",
+			lineColor: "rgb(143, 143, 143)",
+			particleAmount: 50,
+			defaultSpeed: 0.5,
+			variantSpeed: 1,
+			defaultRadius: 5,
+			variantRadius: 9,
+			linkRadius: 150,
+		};
 
-                // Function to display the links for the current page
-                function displayCurrentPage(currentCategory) {
-                    const allLinks = currentCategory.allOriginalLinks;
-                    const currentPage = currentCategory.currentPage;
-                    const startIndex = currentPage * linksPerPage;
-                    const endIndex = startIndex + linksPerPage;
 
-                    // Hide all links first
-                    allLinks.forEach(link => link.style.display = 'none');
+		function resizeReset() {
+			w = canvasBody.width = window.innerWidth;
+			h = canvasBody.height = window.innerHeight;
+		}
 
-                    // Show only the links for the current page
-                    for (let i = startIndex; i < endIndex && i < allLinks.length; i++) {
-                        allLinks[i].style.display = 'list-item';
-                    }
+		window.addEventListener("resize", () => {
+			clearTimeout(window.resizeTimeout);
+			window.resizeTimeout = setTimeout(resizeReset, 200);
+		});
 
-                    // Update button visibility based on number of pages
-                    if (allLinks.length <= linksPerPage) {
-                        toggleButton.style.display = 'none'; // Hide button if no pagination needed
-                    } else {
-                        toggleButton.style.display = 'block'; // Show button if pagination is needed
-                    }
-                }
+		function checkDistance(x1, y1, x2, y2) {
+			return Math.hypot(x2 - x1, y2 - y1);
+		}
 
-                // Initial display of links for each category
-                displayCurrentPage(category);
+		function linkPoints(point1, hubs) {
+			const rgb = opts.lineColor.match(/\d+/g);
+			for (let i = 0; i < hubs.length; i++) {
+				const distance = checkDistance(point1.x, point1.y, hubs[i].x, hubs[i].y);
+				const opacity = 1 - distance / opts.linkRadius;
+				if (opacity > 0) {
+					drawArea.lineWidth = 1;
+					drawArea.strokeStyle = `rgba(${rgb[0]}, ${rgb[1]}, ${rgb[2]}, ${opacity})`;
+					drawArea.beginPath();
+					drawArea.moveTo(point1.x, point1.y);
+					drawArea.lineTo(hubs[i].x, hubs[i].y);
+					drawArea.stroke();
+				}
+			}
+		}
 
-                // Add click listener to the toggle button
-                toggleButton.addEventListener('click', () => {
-                    category.currentPage++; // Move to the next page
-                    // If we've gone past the last page, loop back to the first page (page 0)
-                    if (category.currentPage * linksPerPage >= category.allOriginalLinks.length) {
-                        category.currentPage = 0;
-                    }
-                    displayCurrentPage(category); // Update the displayed links
-                });
-            });
-        });
-    </script>
+		class Particle {
+			constructor() {
+				this.x = Math.random() * w;
+				this.y = Math.random() * h;
+				this.speed = opts.defaultSpeed + Math.random() * opts.variantSpeed;
+				this.directionAngle = Math.random() * Math.PI * 2;
+				this.color = opts.particleColor;
+				this.radius = opts.defaultRadius + Math.random() * opts.variantRadius;
+				this.vector = {
+					x: Math.cos(this.directionAngle) * this.speed,
+					y: Math.sin(this.directionAngle) * this.speed
+				};
+			}
 
-<!-- Logo en la esquina superior izquierda -->
-<div class="top-left-logo">
-  <img src="logo_1.png" alt="Logo" />
-</div>
+			update() {
+				this.border();
+				this.x += this.vector.x;
+				this.y += this.vector.y;
+			}
 
-<!-- Texto en la parte inferior -->
+			border() {
+				if (this.x >= w || this.x <= 0) this.vector.x *= -1;
+				if (this.y >= h || this.y <= 0) this.vector.y *= -1;
+				this.x = Math.max(0, Math.min(w, this.x));
+				this.y = Math.max(0, Math.min(h, this.y));
+			}
 
-<div class="footer-text">
-  <a href="https://cristianfabianperea.notion.site/20-29-Cristian-Fabi-n-Perea-085f39851d424edfaea862cfb220e2a9?source=copy_link" target="_blank" rel="noopener noreferrer">Ing. Cristian Fabian Perea</a>
-</div>
+			draw() {
+				drawArea.beginPath();
+				drawArea.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+				drawArea.fillStyle = this.color;
+				drawArea.fill();
+			}
+		}
 
-<script>
-  const searchTextElement = document.getElementById('search-text');
-  const blinkerElement = document.getElementById('blinker');
-  const hiddenInput = document.getElementById('hidden-input');
+		function setup() {
+			particles = [];
+			resizeReset();
+			for (let i = 0; i < opts.particleAmount; i++) {
+				particles.push(new Particle());
+			}
+			loop();
+		}
 
-  hiddenInput.addEventListener('input', () => {
-    searchTextElement.textContent = hiddenInput.value;
-  });
-
-  hiddenInput.addEventListener('keydown', (event) => {
-    if (event.key === 'Enter') {
-      const trimmedQuery = hiddenInput.value.trim();
-      if (trimmedQuery !== '') {
-        if (isValidUrl(trimmedQuery)) {
-          let urlToOpen = trimmedQuery;
-          if (!urlToOpen.startsWith('http://') && !urlToOpen.startsWith('https://')) {
-            urlToOpen = `http://${urlToOpen}`;
-          }
-          window.location.href = urlToOpen;
-        } else {
-          window.location.href = `https://www.google.com/search?q=${encodeURIComponent(trimmedQuery)}`;
-        }
-      }
-      hiddenInput.value = '';
-      searchTextElement.textContent = '';
-    }
-  });
-
-  function isValidUrl(string) {
-    const urlRegex = /^(https?:\/\/)?([a-zA-Z0-9-]+\.)+[a-zA-Z]{2,}(\/\S*)?$/;
-    return urlRegex.test(string);
-  }
-</script>
-<script>
-  window.onload = function () {
-    document.getElementById('hidden-input').focus();
-  };
-</script>
-  <input 
-  id="hidden-input" 
-  type="text" 
-  autofocus 
-  autocomplete="off" 
-  autocorrect="off" 
-  autocapitalize="off" 
-  spellcheck="false"
-  style="
-    position: fixed;
-    bottom: 10px;
-    left: 10px;
-    width: 200px;
-    background: transparent;
-    border: none;
-    color: white;
-    font-family: monospace;
-    font-size: 1rem;
-    outline: none;
-    caret-color: white;
-    z-index: 10;
-  "
->
+		function loop() {
+			drawArea.clearRect(0, 0, w, h);
+			for (const particle of particles) {
+				particle.update();
+				particle.draw();
+			}
+			for (const particle of particles) {
+				linkPoints(particle, particles);
+			}
+			requestAnimationFrame(loop);
+		}
+		setup();
+	</script>
 </body>
+
 </html>
