@@ -12,9 +12,7 @@
 ```
 
 ***
-<div align="center">
-  <img src="imagen.png" alt="Pantallazo - (Screenshot)">
-</div>
+ <img src="imagen.png" alt="Pantallazo - (Screenshot)" align="center" width="100%"/>
 ***
 
 
