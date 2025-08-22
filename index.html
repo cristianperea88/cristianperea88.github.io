@@ -9,12 +9,9 @@
 </head>
 
 <body>
-
 	<canvas id="canvas" style="position: fixed; top: 0; left: 0; z-index: 0;"></canvas>
 
-
 	<div class="container">
-
 		<div class="left-column">
 			<img src="arch.gif" alt="GIF animado" class="centered-gif" />
 		</div>
@@ -24,24 +21,40 @@
 		<div id="date-time"></div>	
 	</div>
 
-		<script>
-			// Function to format 1 in 01
-			const zeroFill = n => {
-				return ('0' + n).slice(-2);
-			}
+<script>
+	// Función para rellenar con 0 los números menores a 10
+	const zeroFill = n => ('0' + n).slice(-2);
 
-			// Creates interval
-			const interval = setInterval(() => {
-				// Get current time
-				const now = new Date();
+	// Array con los nombres de los meses
+	const meses = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio',
+		'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'];
 
-				// Format date as in mm/dd/aaaa hh:ii:ss
-				const dateTime = zeroFill((now.getMonth() + 1)) + '/' + zeroFill(now.getUTCDate()) + '/' + now.getFullYear() + ' ' + zeroFill(now.getHours()) + ':' + zeroFill(now.getMinutes()) + ':' + zeroFill(now.getSeconds());
+	// Intervalo que actualiza cada segundo
+	const interval = setInterval(() => {
+		const now = new Date();
 
-				// Display the date and time on the screen using div#date-time
-				document.getElementById('date-time').innerHTML = dateTime;
-			}, 1000);
-		</script>
+		// Obtener componentes de la fecha
+		const dia = zeroFill(now.getDate());
+		const mesNombre = meses[now.getMonth()];
+		const anio = now.getFullYear();
+
+		// Obtener hora en formato 12 horas
+		let horas = now.getHours();
+		const minutos = zeroFill(now.getMinutes());
+		const periodo = horas >= 12 ? 'pm' : 'am';
+
+		// Convertir a 12 horas
+		horas = horas % 12;
+		horas = horas ? horas : 12; // el 0 se convierte en 12
+		horas = zeroFill(horas);
+
+		// Armar cadena final
+		const dateTime = `${dia}/${mesNombre}/${anio} - ${horas}:${minutos} ${periodo}`;
+
+		// Mostrar en el HTML
+		document.getElementById('date-time').innerHTML = dateTime;
+	}, 1000);
+</script>
 
 	<div class="bottom-left-buttons">
 		<a href="https://cristianfabianperea.notion.site/20-29-Cristian-Fabi-n-Perea-085f39851d424edfaea862cfb220e2a9?source=copy_link" class="ai-button blue" target="_blank" title="WEB">
