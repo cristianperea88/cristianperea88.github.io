@@ -1,6 +1,6 @@
-# PÁGINA DE INICIO (STARTPAGE)
+# :sparkles: PÁGINA DE INICIO (STARTPAGE) :sparkles:
 
-## Página (Web) :fleur_de_lis:
+## :fleur_de_lis: Página (Web) 
 - [Visualizar](https://cristianperea88.github.io)
 
 ```
@@ -13,12 +13,12 @@
 
 ```
 
-## Pantallazo (Screenshot) :camera_flash:
+## :camera_flash: Pantallazo (Screenshot) 
  <img src="imagen.png" alt="Pantallazo - (Screenshot)" align="center" width="100%"/>
 
 ***
 
-> [!IMPORTANT] :warning:
+> :warning: [!IMPORTANT] 
 > El gif [arch](arch.gif) usado no es de mi propiedad, creditos a su respectivo autor.
 > > *The gif [arch](arch.gif) is not of my property, credit to your respective author.*
 
@@ -29,5 +29,5 @@
 
 ***
 
-## Licencia (License) :balance_scale:
+## :fire: Licencia (License) 
 - [MIT](LICENSE)
