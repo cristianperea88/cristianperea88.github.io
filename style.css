@@ -1,16 +1,18 @@
 :root {
-  --color-bg: #181717;
-  /* Fondo oscuro tipo Gruvbox */
+/* Fondo oscuro tipo Gruvbox */
+  --color-bg: #191106;
+/* Texto principal */
   --color-fg: #ebdbb2;
-  /* Texto principal */
+/* Color aqua para enlaces y decoraciones */
   --color-link: #83a598;
-  /* Color aqua para enlaces y decoraciones */
+/* Verde para acentos */
   --color-green: #00ff00;
-  /* Verde para acentos */
-    --color-red: #ff0000;
-  /* Rojo para acentos */
-      --color-blue: #1e00ff;
-  /* Azul para acentos */
+/* Rojo para acentos */
+  --color-red: #ff0000;
+/* Azul para acentos */
+   --color-blue: #1e00ff;
+/* Cafe lineas */
+   --color-brown: #FFB642;
 }
 
 /* Reset básico */
@@ -125,7 +127,6 @@ body {
 }
 
 
-
 .top-left-buttons {
   position: fixed;
   top: 10px;
@@ -143,7 +144,6 @@ body {
   gap: 10px;
   z-index: 10; 
 }
-
 
 
 /* Ocultar scrollbar */
@@ -212,7 +212,7 @@ body {
 #blinker {
   width: 10px;
   height: 1em;
-  background-color: #66ff00;
+  background-color: var(--color-brown);
   margin-left: 2px;
   animation: blink 1s step-start infinite;
 }
