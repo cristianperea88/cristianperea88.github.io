@@ -2,7 +2,7 @@
 /* Fondo oscuro tipo Gruvbox */
   --color-bg: #191106;
 /* Texto principal */
-  --color-fg: #ebdbb2;
+  --color-fg: #FFB642;
 /* Color aqua para enlaces y decoraciones */
   --color-link: #83a598;
 /* Verde para acentos */
@@ -25,7 +25,7 @@
 html,
 body {
   background: var(--color-bg);
-  color: var(--color-fg);
+  color: var(--color-bg);
   font-family: "Jetbrains Mono", monospace;
   height: 100%;
   width: 100%;
@@ -93,7 +93,7 @@ body {
   align-items: center;
   gap: 6px;
   padding: 6px 10px;
-  border: 0.1px solid #313634;
+  border: 0.1px solid var(--color-brown);
   border-radius: 10px;
   color: var(--color-link);
   text-decoration: none;
