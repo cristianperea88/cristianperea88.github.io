@@ -15,7 +15,9 @@
 
 ### :camera_flash: Pantallazo (Screenshot)
 
- <center><img src="imagen.png" alt="Pantallazo - (Screenshot)" align="center" width="80%"/></center>
+ <center>
+          <img src="imagen.png" alt="Pantallazo - (Screenshot)" align="center" width="80%"/>
+ </center>
 
 ---
 
