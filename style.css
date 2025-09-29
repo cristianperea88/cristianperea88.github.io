@@ -1,0 +1,230 @@
+@font-face {
+  font-family: "Iosevka";
+  src: url("/Iosevka.ttf");
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: "Iosevka";
+  font-size: 20px;
+  background-color: #111111;
+  overflow: hidden;
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+  width: 100px;
+  height: 100px;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  padding: 10px 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px #51f60545;
+  opacity: 0.9;
+}
+
+.top-left-buttons {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px #51f60545;
+  opacity: 0.9;
+}
+
+.top-left-buttons a {
+  text-align: center;
+  text-decoration: none;
+  color: #0fe00f;
+}
+
+.top-left-buttons:hover {
+  transform: scale(1.05);
+}
+
+h2 {
+  color: #109010;
+  font-weight: normal;
+  text-align: center;
+  padding-top: auto;
+  padding-bottom: auto;
+  margin-top: auto;
+  font-weight: bold;
+}
+
+nav {
+  display: inline-block;
+  color: #0fe00f;
+  font-size: 20px;
+  margin: 0 auto;
+}
+
+ul {
+  display: table-cell;
+  text-align: center;
+  padding: 10px 25px;
+  list-style: none;
+  transition: 0.8s;
+  cursor: default;
+}
+
+ul:last-of-type {
+  border-right: none;
+}
+
+li {
+  margin: 10px 0;
+}
+
+ul > li:first-of-type {
+  padding-top: 5px;
+}
+
+ul > li > a {
+  text-decoration: none;
+  color: #109010;
+  transition: color 0.2s;
+}
+
+ul > li > a:hover {
+  animation: color-change 5s infinite;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 0 10px #51f60545;
+  opacity: 0.9;
+}
+
+ul.green:hover {
+  color: #eb6a14;
+  transform: scale(1.05);
+}
+
+ul.blue:hover {
+  color: #e5aa1f;
+  transform: scale(1.05);
+}
+
+ul.red:hover {
+  color: #4ec68e;
+  transform: scale(1.05);
+}
+
+ul.yellow:hover {
+  color: #4db2d1;
+  transform: scale(1.05);
+}
+
+ul.purple:hover {
+  color: #6260c3;
+  transform: scale(1.05);
+}
+
+.nav-title {
+  font-size: 22px;
+  font-weight: bold;
+  cursor: default;
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  text-align: center;
+  font-family: "Iosevka";
+  border: 10px solid #091202;
+  gap: 6px;
+  padding: 6px 10px;
+  background-color: rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(3px);
+  box-shadow: 0 0 50px #51f60545;
+  opacity: 0.9;
+  border-radius: 30px;
+}
+
+.mySlides {
+  position: absolute;
+  opacity: 0;
+}
+
+#flair {
+  color: #c04e4e;
+  animation: color-change 3s infinite;
+}
+
+@keyframes color-change {
+  0% {
+    color: #f7685e;
+  }
+  17% {
+    color: #eb6a14;
+  }
+  34% {
+    color: #e5aa1f;
+  }
+  51% {
+    color: #4ec68e;
+  }
+  68% {
+    color: #4db2d1;
+  }
+  85% {
+    color: #6260c3;
+  }
+}
+
+#data-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 910px;
+  height: 00px;
+}
+
+#slideshow {
+  width: 350px;
+  height: 600px;
+  background: #1b1b1b center / cover no-repeat;
+  border-radius: 20px;
+}
+
+#slideshow img {
+  width: 350px;
+  height: 600px;
+  object-fit: cover;
+  border-radius: 20px;
+  opacity: 70%;
+}
+
+#canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+#codes {
+  bottom: 0;
+  left: auto;
+  padding: 8px;
+  color: #c04e4e;
+  text-align: center;
+  font-family: "Iosevka";
+  font-size: 30px;
+}
