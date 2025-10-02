@@ -24,7 +24,7 @@
 #### :warning: Importante:
 
 > [!WARNING]
-> El Gif usadas no son de mi propiedad, creditos a su respectivo autor.
+> El Gif usado no es de mi propiedad, creditos a su respectivo autor.
 
 [^1]: [Referencia](https://cristianperea88.github.io)
 
