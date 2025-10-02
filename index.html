@@ -8,13 +8,20 @@
 </head>
 
 <body>
+
+	<!-- Barra de búsqueda inferior -->
+	<div class="search-bar">
+		<form action="https://www.google.com/search" method="get">
+			<input type="text" name="q" placeholder="Qué vamos a buscar hoy?" required>
+			<button type="submit">💚</button>
+		</form>
+	</div>
 	<div class="main">
 		<div id="data-wrapper">
 			<br>
 			<h2>⚜️ Ing. CRISTIAN PEREA, <span id="flair">The Best. ⚜️</span></h2>
-			<h2> ◂--------------------። 🌟 ።--------------------▸ </h2>
+			<h2 class="decor-title"> ( 🌟 ) </h2>
 			<br>
-			</span>
 			<nav>
 				<ul class="blue">
 					<a class="nav-title">[ IA ]</a>
@@ -56,7 +63,7 @@
 					<li><a href="https://www.reddit.com/">Reddit</a></li>
 				</ul>
 			</nav>
-			<h2> ◃--------------------܍ 🏆 ܍--------------------▹ </span></h2>
+			<h2 class="decor-title"> ( 🏆 ) </h2>
 			<div id="codes"></div>
 		</div>
 		<div id="slideshow">
@@ -78,7 +85,20 @@
 
 	<!-- Fondo Particulas y Reloj-->
 	<script src="script.js"></script>
+	<script>
+		document.addEventListener("keydown", function (event) {
+			// Evitamos activar cuando se escribe en un input o textarea
+			if (
+				event.target.tagName.toLowerCase() !== "input" &&
+				event.target.tagName.toLowerCase() !== "textarea"
+			) {
+				const searchInput = document.querySelector(".search-bar input");
+				if (searchInput) {
+					searchInput.focus();
+				}
+			}
+		});
+	</script>
 </body>
-
 
 </html>
