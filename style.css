@@ -86,6 +86,7 @@ ul {
 
 li {
   margin: 5px 0;
+  font-size: 20px;
 }
 
 ul > li > a {
