@@ -11,7 +11,7 @@
 
 ## :fleur_de_lis: Sitio Web (Website)
 
-- [Visualizar](https://cristianperea88.github.io)
+- [HOMEPAGE](https://cristianperea88.github.io)
 
 ### :camera_flash: Pantallazo (Screenshot)
 
