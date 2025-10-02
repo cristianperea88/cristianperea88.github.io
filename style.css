@@ -212,6 +212,13 @@ main {
   transform: scale(1.1);
 }
 
+/* Definimos la propiedad custom animable */
+@property --angle {
+  syntax: "<angle>";
+  initial-value: 0deg;
+  inherits: false;
+}
+
 .search-bar {
   position: fixed;
   top: 30px;
@@ -238,6 +245,46 @@ main {
 @media (min-width: 100px) {
   .search-bar {
     width: 60%;
+  }
+}
+
+/* Borde animado */
+.search-bar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  padding: 3px; /* grosor del borde */
+  border-radius: inherit;
+  background: conic-gradient(
+    from var(--angle),
+    #e5310d,
+    #ff7a00,
+    #ffee00,
+    #33ff00,
+    #00ffee,
+    #0066ff,
+    #cc00ff,
+    #ff005d
+  );
+
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+
+  animation: spin 6s linear infinite;
+  z-index: 0;
+}
+
+/* Para que el contenido de la barra quede arriba */
+.search-bar > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* Animación del ángulo del gradiente */
+@keyframes spin {
+  to {
+    --angle: 360deg;
   }
 }
 
