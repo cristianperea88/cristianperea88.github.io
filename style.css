@@ -234,6 +234,12 @@ main {
   justify-content: center;
 }
 
+@media (min-width: 100px) {
+  .search-bar {
+    width: 60%;
+  }
+}
+
 .search-bar form {
   display: flex;
   width: 100%;
