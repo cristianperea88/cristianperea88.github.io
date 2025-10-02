@@ -235,7 +235,6 @@ main {
   border-radius: 30px;
   background-color: rgba(0, 0, 0, 0.1);
   backdrop-filter: blur(8px);
-  box-shadow: 0 0 10px #51f60545;
   opacity: 0.9;
   z-index: 1000;
   display: flex;
