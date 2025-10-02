@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Iosevka";
   src: url("/Iosevka.ttf");
+  font-display: swap;
 }
 
 body {
