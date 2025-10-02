@@ -24,7 +24,7 @@
 #### :warning: Importante:
 
 > [!WARNING]
-> Las imagenes usadas no son de mi propiedad, creditos a sus respectivos autores.
+> El Gif usadas no son de mi propiedad, creditos a su respectivo autor.
 
 [^1]: [Referencia](https://cristianperea88.github.io)
 
@@ -32,7 +32,6 @@
 
 1. [CaffeineOnIce](https://github.com/CaffeineOnIce/startpage)
 2. [NajmosSalahin](https://github.com/NajmosSalahin/startpage)
-3. [kencx](https://github.com/kencx/startpage)
 
 ---
 
